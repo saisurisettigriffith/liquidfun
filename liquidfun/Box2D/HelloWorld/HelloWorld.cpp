@@ -74,7 +74,7 @@ int main(int argc, char** argv)
 	fixtureDef.density = 1.0f;
 
 	// Override the default friction.
-	fixtureDef.friction = 0.3f;
+	fixtureDef.friction = 0.4f;
 
 	// Add the shape to the body.
 	body->CreateFixture(&fixtureDef);
@@ -87,7 +87,7 @@ int main(int argc, char** argv)
 	int32 positionIterations = 2;
 
 	// This is our little game loop.
-	for (int32 i = 0; i < 60; ++i)
+	for (int32 i = 0; i < 60; i++)
 	{
 		// Instruct the world to perform a single step of simulation.
 		// It is generally best to keep the time step and iterations fixed.
@@ -97,7 +97,7 @@ int main(int argc, char** argv)
 		b2Vec2 position = body->GetPosition();
 		float32 angle = body->GetAngle();
 
-		printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
+		printf("Position.x: %4.2f Position.y: %4.2f Angle: %4.2f\n", position.x, position.y, angle);
 	}
 
 	// When the world destructor is called, all bodies and joints are freed. This can
